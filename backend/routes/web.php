@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/users', function () {
     return view('users');
 });
+
+// Route::get('/users', 'App\Http\Controllers\UsersController@index');
+// Route::get('/users/index', 'App\Http\Controllers\UsersController@index');
+// Route::get('/users/list', 'App\Http\Controllers\UsersController@index');
+// Route::get('/users/form', 'App\Http\Controllers\UsersController@index');
+// Route::get('/users/edit/{num}', 'App\Http\Controllers\UsersController@index');

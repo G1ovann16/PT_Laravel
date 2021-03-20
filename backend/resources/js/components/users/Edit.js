@@ -24,15 +24,8 @@ function Edit(props){
 
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label for="address">Address</label>
+          <label for="address">Age</label>
           <input type="text" class="form-control" placeholder="1234 Main St" />
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label for="address">Phone </label>
-          <input type="text" class="form-control" placeholder="123467890" />
         </div>
       </div>
 

@@ -9,11 +9,11 @@
 <body>
 <div class="container" style="padding:20px;">
 	<h1 style="text-align:center;">
-		<a href="/users"> Full Stack - Laravel 8 & React Hooks </a>
+		<a href="/users"> Test - Laravel React </a>
 	</h1>
 	<hr>
 
-  <div id="example"></div>
+  <div id="main-users"></div>
   <script src="/js/app.js"></script>
 
 </div>
