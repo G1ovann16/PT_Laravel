@@ -19,8 +19,7 @@ class CreateUserTable extends Migration
             $table->string('email')->unique();
             $table->integer('age');
             $table->string('password');
-            // $table->usignedBigInteger('rol');
-            // $table->foreing('rol')->references('rol_id')->on('role');
+            $table->integer('rol');
             $table->timestamps();
         });
     }
