@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/users/role', 'App\Http\Controllers\API\UserController@list_role');
 Route::post('/users/create', 'App\Http\Controllers\API\UserController@create');
+Route::get('/users/list', 'App\Http\Controllers\API\UserController@list');
+Route::get('/User/get/{id}', 'App\Http\Controllers\API\UserController@get');

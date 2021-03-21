@@ -1,4 +1,18 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import usersServices from '../../services/Users';
+
+import {Link} from 'react-router-dom'
+
+const [listUsers, SetListUsers] = useState([]);
+
+useEffect(()=>{
+  async function fetchDataUsers(){
+    const res= await usersServices.listUsers();
+    SetListUsers(res.data);
+  }
+  fetchDataUsers
+
+},[])
 
 function List(){
   return (
@@ -15,17 +29,24 @@ function List(){
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>John Doe</td>
-            <td>john@example.com</td>
-            <td>24</td>
-            <td>tester</td>
-            <td>
-              <a href="#" class="btn btn-light"> Edit </a>
-              <a href="#" class="btn btn-danger"> Delete </a>
-            </td>
-          </tr>
+            {
+              listUsers.map((item)=>{
+                return(
+                 <tr>
+                  <th scope="row">{item.id}</th>
+                  <td>{item.name}</td>
+                   <td>{item.mail}</td>
+                  <td>{item.age}</td>
+                  <td>{item.role.rol_name}</td>
+                  <td>
+                    <Link to={"/users/edit"+item.id} class="btn btn-light"> Edit </Link>
+                    <Link to={"/users/delete"+item.id} class="btn btn-danger"> Delete </Link>
+                </td>
+
+                </tr>
+                )
+              })
+            }
           <tr>
             <th scope="row">2</th>
             <td>John Doe</td>

@@ -37,4 +37,43 @@ class UserController extends Controller
 
         return $response;
     }
+    public function list(Request $request){
+
+        try {
+
+            $data = Users::with("role")->get();
+
+            $response['data']= $data;
+            $response['message']= "Load successfully";
+            $response['success']= true;
+        } catch (\Exception $e) {
+            $response['message']= $e->getMessage();
+            $response['success']= false;
+        }
+
+        return $response;
+    }
+    public function get($id){
+
+        try {
+  
+          $data = User::with("role")->find($id);
+  
+          if ($data) {
+            $response['data'] = $data;
+            $response['message'] = "Load successfully";
+            $response['success'] = true;
+          }
+          else {
+            $response['message'] = "Not found data id => $id";
+            $response['success'] = false;
+          }
+  
+        } catch (\Exception $e) {
+          $response['message'] = $e->getMessage();
+          $response['success'] = false;
+        }
+        return $response;
+      }
+    
 }

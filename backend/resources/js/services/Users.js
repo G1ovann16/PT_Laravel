@@ -3,7 +3,7 @@ import axios from 'axios';
  
 const users = {}
 
-users.list = async () =>{
+users.listRole = async () =>{
     const  urlList = baseUrl+"/role"
     const res = await axios.get(urlList)
     .then(response => {return response.data;})
@@ -18,4 +18,21 @@ users.save = async () =>{
     .catch(error=>{return error;})
     return res;
 }
+
+users.listUsers = async () =>{
+    const  urlList = baseUrl+"/list"
+    const res = await axios.get(urlList)
+    .then(response => {return response.data;})
+    .catch(error=>{return error;})
+    return res;
+}
+users.get = async (id) => {
+
+    const urlGet = baseUrl+"/get/"+id
+    const res = await axios.get(urlGet)
+    .then(response=>{ return response.data })
+    .catch(error => { return error })
+    return res;
+  
+  }
 export default users

@@ -11,7 +11,7 @@ function Form(){
 
   useEffect(()=>{
     async function fetchDataRol(){
-      const res = await usersServices.list
+      const res = await usersServices.listRole
       SetListRol(res.data)
     }
     fetchDataRol()
