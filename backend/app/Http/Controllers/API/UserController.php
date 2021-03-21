@@ -57,7 +57,7 @@ class UserController extends Controller
 
         try {
   
-          $data = User::with("role")->find($id);
+          $data = Users::with("role")->find($id);
   
           if ($data) {
             $response['data'] = $data;
@@ -75,5 +75,41 @@ class UserController extends Controller
         }
         return $response;
       }
-    
+      public function update(Request $request,$id){
+
+        try {
+  
+          $data['name']=$request['name'];
+          $data['email']=$request['email'];
+          $data['password']=$request['password'];
+          $data['age']=$request['age'];
+          $data['rol']=$request['rol'];
+  
+          Users::where("id",$id)->update($data);
+  
+          $response['message'] = "Updated successfully";
+          $response['success'] = true;
+  
+        } catch (\Exception $e) {
+          $response['message'] = $e->getMessage();
+          $response['success'] = false;
+        }
+        return $response;
+  
+      }
+
+      public function delete($id){
+
+        try {
+          $res = Users::where("id",$id)->delete();
+          $response['res'] = $res;
+          $response['message'] = "Deleted successful";
+          $response['success'] = true; 
+        } catch (\Exception $e) {
+          $response['message'] = $e->getMessage();
+          $response['success'] = false;
+        }
+  
+        return $response;
+      }
 }

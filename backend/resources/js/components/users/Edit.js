@@ -40,6 +40,27 @@ function Edit(props){
 
   },[])
 
+  const updateUsers = async () => {
+
+    const data = {
+      id,
+      name,
+      email,
+      age,
+      rol
+    }
+
+    const res = await usersServices.update(data);
+
+    if (res.success) {
+      alert(res.message)
+    }
+    else {
+      alert(res.message)
+    }
+
+  }
+
 
   return (
     <div>
@@ -47,22 +68,25 @@ function Edit(props){
       <hr/>
       <div class="row">
         <div class="col-md-6 mb-3">
-          <label for="firstName">Name employee</label>
-          <input type="text" class="form-control"/>
+          <label for="firstName">Name</label>
+          <input type="text" class="form-control" value={name}
+          onChange={(event)=>setName(event.target.value)} />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="email">Email</label>
-          <input type="email" class="form-control" placeholder="you@example.com" />
+          <input type="email" class="form-control" placeholder="you@example.com"
+          value={email} onChange={(event)=>setEmail(event.target.value)}/>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="address">Age</label>
-          <input type="text" class="form-control" placeholder="1234 Main St" />
+          <input type="text" class="form-control" placeholder="1234 Main St" 
+           value={age} onChange={(event)=>setAge(event.target.value)}/>
         </div>
       </div>
 

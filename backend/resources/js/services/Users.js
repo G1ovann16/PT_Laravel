@@ -35,4 +35,20 @@ users.get = async (id) => {
     return res;
   
   }
+
+  users.update = async (data) => {
+    const urlUpdate = baseUrl+"/update/"+data.id
+    const res = await axios.put(urlUpdate,data)
+    .then(response=>{ return response.data; })
+    .catch(error =>{ return error; })
+    return res;
+  }
+
+  users.delete = async (id) => {
+    const urlDelete = baseUrl+"/delete/"+id
+    const res = await axios.delete(urlDelete)
+    .then(response=> { return response.data })
+    .catch(error =>{ return error })
+    return res;
+  }
 export default users
