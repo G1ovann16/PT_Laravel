@@ -15,7 +15,8 @@ class Users extends Model
         'name',
         'email',
         'age',
-        'password'
+        'password',
+        'rol'
     ];
     
     public function role(){
