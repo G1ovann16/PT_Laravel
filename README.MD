@@ -83,21 +83,11 @@ _Laravel es un marco de aplicación web con una sintaxis elegante y expresiva. Y
 - [Procesamiento robusto de trabajos en segundo plano](https://laravel.com/docs/queues).
 - [Transmisión de eventos en tiempo real](https://laravel.com/docs/broadcasting).
 
-### Install Project 🔧    
-_Para el uso de este código, es posible que haya creado una interfaz; o una vez descargado o clonado, el repositorio debe crear una base de datos que debe ubicarse. **.env**_
 
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
-   
- ```
 
  ### CODE
 A continuación se agreaga una vía para la confirmacion de registro tras mail
+
 _Accede a:_
 **.env**
 
